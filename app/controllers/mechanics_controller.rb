@@ -6,7 +6,8 @@ class MechanicsController < ActionController::Base
 
   def update
     ride = Ride.find(strong_params[:ride_id])
-    ride.update!(mechanic_id: params[:id])
+    ride.create(mechanic_id: params[:id])
+    
     redirect_to merchanic_path(params[:id])
   end
 
